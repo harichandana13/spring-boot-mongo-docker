@@ -1,0 +1,14 @@
+version: "3.3"
+
+
+services:
+  spring:
+    environment:
+    - MONGO_DB_HOSTNAME=mongo
+    - MONGO_DB_USERNAME=harichandana1
+    - MONGO_DB_PASSWORD=password1
+
+  mongo:
+   environment:
+   - MONGO_INITDB_ROOT_USERNAME=harichandana1
+   - MONGO_INITDB_ROOT_PASSWORD=password1
