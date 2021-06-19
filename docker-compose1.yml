@@ -1,0 +1,28 @@
+version: "3.3"
+
+
+services:
+  spring:
+    image: harichandanadockeron/spring-boot-app:latest
+    ports:
+    - 8080:8080
+    depends_on:
+	  - mongo
+    networks:
+    - springnet
+  
+  
+  mongo:
+    image: mongo
+    volumes:
+    - mongo:/data/db
+    networks:
+    - springnet
+  
+volumes:
+  mongo:
+    driver: local
+ 
+networks:
+  springnet:
+    driver: bridge
